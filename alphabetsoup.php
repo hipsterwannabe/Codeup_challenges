@@ -6,20 +6,25 @@
 
 function alphabet_soup($str){
 
-	//take string and separate words
-	$word_array = explode(' ', $str);
+	//explode passed string
+	$sortedString = " ";
+	$unsortedArray = explode(" ", $str);
+	var_dump($unsortedArray);
+	//loop through array values
+	foreach ($unsortedArray as $key => $value) {
+		//explode word strings
+		$unsortedWord = str_split($value);
+		asort($unsortedWord, SORT_NATURAL);
+		var_dump($unsortedWord);
+		foreach ($unsortedWord as $key => $value) {
+			$sortedString = $sortedString.$unsortedWord[$key];
+		}
+		
 	
-	//alphabetize letters in individual words
-	//at this state, we have array of words, string in each index
-	foreach ($i as $word_array[$i]) {
-		//go through array to get each word
-		$sorted_word = [];
-		$unsorted_word = explode('', $word);
-		$sorted_word[$i] = implode(asort($unsorted_word)) ;
 	}
-
-	//return string of alphabetized words
-	return $reverse;
+	var_dump($sortedString);
 }
 
+$str = 'hello world';
+alphabet_soup($str);
 ?>
